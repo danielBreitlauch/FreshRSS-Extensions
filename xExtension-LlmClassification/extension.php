@@ -299,7 +299,8 @@ final class LlmClassificationExtension extends Minz_Extension {
 			Minz_Log::warning('LlmClassification: API call failed for ' . $url
 				. ' (HTTP ' . ($response['status'] ?? 0)
 				. (($response['error'] ?? '') !== '' ? '; ' . ($response['error'] ?? '') : '')
-				. '), not retrying');
+				. '), not retrying'
+				. ' response: ' . json_encode($response));
 			return null;
 		}
 
